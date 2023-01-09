@@ -1,6 +1,11 @@
 const CONFIG_MATERY = {
   HOME_BANNER_ENABLE: true,
-  HOME_BANNER_GREETINGS: ['Hi，我是一个程序员', 'Hi，我是一个打工人', 'Hi，我是一个干饭人', '欢迎来到我的博客🎉'], // 首页大图标语文字
+  HOME_BANNER_GREETINGS: [
+    'Hi，KentCraft是一个大家庭',
+    'Hi，KentCraft是一群最初由mc爱好者所聚集在一起的俱乐部',
+    'Hi，KentCraft是一个游戏玩家的梦想家园, 我们不仅仅只局限在游戏',
+    '欢迎各位来到KentCraft🎉'
+  ], // 首页大图标语文字
 
   HOME_NAV_BUTTONS: true, // 首页是否显示分类大图标按钮
 
