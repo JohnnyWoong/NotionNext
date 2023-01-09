@@ -2,7 +2,7 @@ const CONFIG_HEXO = {
   HOME_BANNER_ENABLE: true,
   HOME_BANNER_GREETINGS: [
     'Hi，KentCraft是一个和谐的大家庭',
-    'Hi，KentCraft是一群最初由mc爱好者所成立的俱乐部',
+    'Hi，KentCraft是一群最初由mc爱好者所聚集的俱乐部',
     'Hi，KentCraft想打造一个不仅仅只局限在游戏的所有人的梦想家园',
     '欢迎各位来到KentCraft🎉'
   ], // 首页大图标语文字
