@@ -1,9 +1,9 @@
 const CONFIG_MATERY = {
   HOME_BANNER_ENABLE: true,
   HOME_BANNER_GREETINGS: [
-    'Hi，KentCraft是一个大家庭',
-    'Hi，KentCraft是一群最初由mc爱好者所聚集在一起的俱乐部',
-    'Hi，KentCraft是一个游戏玩家的梦想家园, 我们不仅仅只局限在游戏',
+    'Hi，KentCraft是一个和谐的大家庭',
+    'Hi，KentCraft是一群最初由mc爱好者所成立的俱乐部',
+    'Hi，KentCraft想打造一个不仅仅只局限在游戏的所有人的梦想家园',
     '欢迎各位来到KentCraft🎉'
   ], // 首页大图标语文字
 
