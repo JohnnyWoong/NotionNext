@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import throttle from 'lodash.throttle'
 import { uuidToId } from 'notion-utils'
 import Progress from './Progress'
-import JumpToTopButton from './JumpToTopButton'
+
 /**
  * 目录导航组件
  * @param toc
@@ -10,10 +10,13 @@ import JumpToTopButton from './JumpToTopButton'
  * @constructor
  */
 const Catalog = ({ toc }) => {
-  // 无目录就直接返回空
-  if (!toc || toc.length < 1) {
-    return <></>
-  }
+  const tocIds = []
+
+  // 目录自动滚动
+  const tRef = useRef(null)
+  // 同步选中目录事件
+  const [activeSection, setActiveSection] = React.useState(null)
+
   // 监听滚动事件
   React.useEffect(() => {
     window.addEventListener('scroll', actionSectionScrollSpy)
@@ -23,14 +26,9 @@ const Catalog = ({ toc }) => {
     }
   }, [])
 
-  // 目录自动滚动
-  const tRef = useRef(null)
-  const tocIds = []
-
-  // 同步选中目录事件
-  const [activeSection, setActiveSection] = React.useState(null)
   const throttleMs = 100
   const actionSectionScrollSpy = React.useCallback(throttle(() => {
+    console.log('滚动')
     const sections = document.getElementsByClassName('notion-h')
     let prevBBox = null
     let currentSectionId = activeSection
@@ -56,6 +54,11 @@ const Catalog = ({ toc }) => {
     const index = tocIds.indexOf(currentSectionId) || 0
     tRef?.current?.scrollTo({ top: 28 * index, behavior: 'smooth' })
   }, throttleMs))
+
+  // 无目录就直接返回空
+  if (!toc || toc.length < 1) {
+    return <></>
+  }
 
   return <div className='px-3'>
     <div className='w-full mt-2 mb-4'>
@@ -83,7 +86,6 @@ const Catalog = ({ toc }) => {
         })}
       </nav>
     </div>
-    <JumpToTopButton className='text-gray-400 hover:text-green-500 hover:bg-gray-100 py-1 duration-200' />
   </div>
 }
 
